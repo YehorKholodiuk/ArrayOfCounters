@@ -35,6 +35,14 @@ function App() {
     );
     setCounts(updatedCounts)
   }
+
+  const addCounter = () => {
+  const newCount = {
+      id: Math.random(),
+      value:0
+  };
+  setCounts([...counts, newCount])
+  }
   return (
       <div className="App">
 
@@ -50,7 +58,7 @@ function App() {
           )}
         </ul>
  <hr/>
-        <button>Add Counter</button>
+        <button onClick={addCounter}>Add Counter</button>
       </div>
   );
 }
