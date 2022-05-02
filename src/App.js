@@ -43,7 +43,14 @@ function App() {
   };
   setCounts([...counts, newCount])
   }
-  return (
+
+
+    const DeleteThis = (id) => {
+        setCounts([...counts].filter(el => el.id !== id))
+
+    }
+
+    return (
       <div className="App">
 
         <ul>
@@ -52,6 +59,7 @@ function App() {
                 <button onClick={() => minus(el.id)}>minus</button>
                 {el.value}
                 <button onClick={() => plus(el.id)}>plus</button>
+                  <button onClick={() => DeleteThis(el.id)}>Delete</button>
               </li>
               )
 
